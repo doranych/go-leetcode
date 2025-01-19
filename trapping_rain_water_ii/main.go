@@ -2,32 +2,7 @@ package trapping_rain_water_ii
 
 import (
 	"container/heap"
-	"fmt"
 )
-
-/*
- https://leetcode.com/problems/trapping-rain-water-ii/description/
- Given an m x n integer matrix heightMap representing the height of each unit cell in a 2D elevation map,
- return the volume of water it can trap after raining.
-
- Example 1:
- Input: heightMap = [[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,1]]
- Output: 4
- Explanation:
- After the rain, water is trapped between the blocks.
- We have two small pounds 1 and 3 units of water trapped.
- The total volume of water = 4 units.
-
- Example 2:
- Input: heightMap = [[3,3,3,3,3],[3,2,2,2,3],[3,2,1,2,3],[3,2,2,2,3],[3,3,3,3,3]]
- Output: 10
-
- Constraints:
-    m == heightMap.length
-    n == heightMap[i].length
-    1 <= m, n <= 200
-    0 <= heightMap[i][j] <= 2 * 104
-*/
 
 type Cell struct {
 	curHeight, x, y int
@@ -53,37 +28,30 @@ func (h *MinHeap) Pop() any {
 
 func trapRainWater(heightMap [][]int) int {
 	m, n := len(heightMap), len(heightMap[0])
-	visited := make([][]bool, m)
-
-	boundary := &MinHeap{}
-	heap.Init(boundary)
 	// create matrix of visited cells, push box to the boundary queue
 	// and mark initial boundary as visited
+	visited := make([][]bool, m)
+	boundary := &MinHeap{}
+	heap.Init(boundary)
 	for i := 0; i < m; i++ {
 		visited[i] = make([]bool, n)
-		if i == 0 || i == m-1 {
-			for j := 0; j < n; j++ {
+		for j := 0; j < n; j++ {
+			if i == 0 || i == m-1 || j == 0 || j == n-1 {
 				visited[i][j] = true
-				boundary.Push(Cell{heightMap[i][j], i, j})
+				heap.Push(boundary, Cell{heightMap[i][j], i, j})
 			}
-		} else {
-			visited[i][0] = true
-			visited[i][n-1] = true
-			boundary.Push(Cell{heightMap[i][0], i, 0})
-			boundary.Push(Cell{heightMap[i][n-1], i, n - 1})
 		}
 	}
 
-	d_x := []int{0, 0, -1, 1}
-	d_y := []int{-1, 1, 0, 0}
+	dX := []int{0, 0, -1, 1}
+	dY := []int{-1, 1, 0, 0}
 
 	totalWater := 0
 	for boundary.Len() > 0 {
 		cell := heap.Pop(boundary).(Cell)
-		fmt.Println(cell)
 		// looking around
 		for i := range 4 {
-			newX, newY := cell.x+d_x[i], cell.y+d_y[i]
+			newX, newY := cell.x+dX[i], cell.y+dY[i]
 			if newX < 0 || newY < 0 || newX >= m || newY >= n {
 				continue
 			}
