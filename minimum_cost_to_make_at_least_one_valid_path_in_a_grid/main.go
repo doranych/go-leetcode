@@ -28,9 +28,9 @@ func (h *MinHeap) Pop() any {
 func minCost(grid [][]int) int {
 	m, n := len(grid), len(grid[0])
 	costs := make([][]int, m)
-	for i, _ := range costs {
+	for i := range costs {
 		costs[i] = make([]int, n)
-		for j, _ := range costs[i] {
+		for j := range costs[i] {
 			costs[i][j] = math.MaxInt32
 		}
 	}
@@ -52,7 +52,7 @@ func minCost(grid [][]int) int {
 			continue
 		}
 
-		for i, _ := range directions {
+		for i := range directions {
 			newX, newY := cell.x+directions[i].x, cell.y+directions[i].y
 			if newX < 0 || newY < 0 || newX >= m || newY >= n {
 				continue
