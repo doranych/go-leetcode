@@ -47,7 +47,7 @@ func minCost(grid [][]int) int {
 	heap.Push(h, Cell{0, 0, 0})
 
 	for h.Len() > 0 {
-		cell := h.Pop().(Cell)
+		cell := heap.Pop(h).(Cell)
 		if cell.cost > costs[cell.x][cell.y] {
 			continue
 		}
