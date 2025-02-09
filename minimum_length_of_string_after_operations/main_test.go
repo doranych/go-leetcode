@@ -11,7 +11,7 @@ func Test_minimumLength(t *testing.T) {
 		args args
 		want int
 	}{
-		{"", args{"aabccabba"}, 3},
+		{"", args{"aabccabba"}, 5},
 		{"", args{"bb"}, 2},
 	}
 	for _, tt := range tests {
