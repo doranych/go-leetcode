@@ -33,5 +33,5 @@ We cannot perform any operations, so we return the length of the original string
 
 **Constraints:**
 
-* `1 <= s.length <= 2 * 105`
+* `1 <= s.length <= 2 * 1e5`
 * `s` consists only of lowercase English letters.

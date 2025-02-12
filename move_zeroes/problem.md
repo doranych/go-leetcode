@@ -21,6 +21,6 @@ Output: [0]
 
 **Constraints:**
 
-* `1 <= nums.length <= 104`
+* `1 <= nums.length <= 1e4`
 * `-231 <= nums[i] <= 231 - 1`
 

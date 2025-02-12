@@ -41,9 +41,9 @@ After query 4, ball 0 has color 1, balls 1 and 2 have color 2, ball 3 has color 
 
 Constraints:
 
-* `1 <= limit <= 109`
-* `1 <= n == queries.length <= 105`
+* `1 <= limit <= 1e9`
+* `1 <= n == queries.length <= 1e5`
 * `queries[i].length == 2`
 * `0 <= queries[i][0] <= limit`
-* `1 <= queries[i][1] <= 109`
+* `1 <= queries[i][1] <= 1e9`
 

@@ -29,10 +29,10 @@ Explanation: Every string satisfies the conditions, so we return [3,2,1].
 
 
 **Constraints:**
-* `1 <= words.length <= 105`
+* `1 <= words.length <= 1e5`
 * `1 <= words[i].length <= 40`
 * `words[i]` consists only of lowercase English letters.
-* `sum(words[i].length) <= 3 * 105`
-* `1 <= queries.length <= 105`
+* `sum(words[i].length) <= 3 * 1e5`
+* `1 <= queries.length <= 1e5`
 * `0 <= li <= ri < words.length`
 

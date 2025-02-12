@@ -51,7 +51,7 @@ Output: [true,true]
 * `ai != bi`
 * All the pairs `[ai, bi]` are **unique**.
 * The prerequisites graph has no cycles.
-* `1 <= queries.length <= 104`
+* `1 <= queries.length <= 1e4`
 * `0 <= ui, vi <= numCourses - 1`
 * `ui != vi`
 

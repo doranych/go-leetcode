@@ -46,7 +46,7 @@ Explanation: [1,7,28,19,10] is the lexicographically smallest array we can obtai
 
 **Constraints:**
 
-* `1 <= nums.length <= pow(10,5)`
-* `1 <= nums[i] <= pow(10,9)`
-* `1 <= limit <= pow(10,9)`
+* `1 <= nums.length <= 1e5`
+* `1 <= nums[i] <= 1e9`
+* `1 <= limit <= 1e9`
 

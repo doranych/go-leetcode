@@ -34,5 +34,5 @@ The integer 3 has the same number of set bits as num2, and the value 3 XOR 1 = 2
 
 **Constraints:**
 
-* `1 <= num1, num2 <= 109`
+* `1 <= num1, num2 <= 1e9`
 

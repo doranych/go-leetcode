@@ -45,7 +45,7 @@ Changing s[0] to either '(' or ')' will not make s valid.
 **Constraints:**
 
 * `n == s.length == locked.length`
-* `1 <= n <= 105`
+* `1 <= n <= 1e5`
 * `s[i]` is either `(` or `)`.
 * `locked[i]` is either `0` or `1`.
 

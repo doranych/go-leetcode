@@ -30,6 +30,6 @@ Output: 1
 **Constraints:**
 
 * `n == height.length`
-* `2 <= n <= 105`
-* `0 <= height[i] <= 104`
+* `2 <= n <= 1e5`
+* `0 <= height[i] <= 1e4`
 

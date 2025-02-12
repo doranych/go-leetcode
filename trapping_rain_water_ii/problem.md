@@ -30,4 +30,4 @@ Output: 10
 * `m == heightMap.length`
 * `n == heightMap[i].length`
 * `1 <= m, n <= 200`
-* `0 <= heightMap[i][j] <= 2 * 104`
+* `0 <= heightMap[i][j] <= 2 * 1e4`

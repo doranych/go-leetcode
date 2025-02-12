@@ -31,7 +31,7 @@ Explanation: The only possible solution is to put each character in a separate s
 
 **Constraints:**
 
-* `1 <= s.length <= 105`
+* `1 <= s.length <= 1e5`
 * `s` consists of lowercase English letters.
-* `1 <= k <= 105`
+* `1 <= k <= 1e5`
 

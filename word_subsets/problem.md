@@ -33,7 +33,7 @@ Output: ["cccbb"]
 
 **Constraints:**
 
-* `1 <= words1.length, words2.length <= 104`
+* `1 <= words1.length, words2.length <= 1e4`
 * `1 <= words1[i].length, words2[i].length <= 10`
 * `words1[i]` and `words2[i]` consist only of lowercase English letters.
 * All the strings of `words1` are unique.

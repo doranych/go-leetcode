@@ -39,6 +39,6 @@ nc.find(10); // Number 10 is at the indices 2, 3, and 5. The smallest index that
 
 **Constraints:**
 
-* `1 <= index, number <= pow(10,9)`
-* At most `pow(10,5)` calls will be made in total to change and find.
+* `1 <= index, number <= 1e9`
+* At most `1e5` calls will be made in total to change and find.
 

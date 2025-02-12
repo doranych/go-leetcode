@@ -45,6 +45,6 @@ Explanation: The 4 palindromic subsequences of length 3 are:
 
 **Constraints**:
 
-* `3 <= s.length <= 105`
+* `3 <= s.length <= 1e5`
 * `s` consists of only lowercase English letters.
 

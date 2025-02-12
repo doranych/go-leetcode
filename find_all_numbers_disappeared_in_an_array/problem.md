@@ -20,5 +20,5 @@ Output: [2]
 **Constraints:**
 
 * `n == nums.length`
-* `1 <= n <= 105`
+* `1 <= n <= 1e5`
 * `1 <= nums[i] <= n`

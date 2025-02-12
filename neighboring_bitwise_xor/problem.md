@@ -47,6 +47,6 @@ Explanation: There is no valid original array that gives derived.
 **Constraints:**
 
 * `n == derived.length`
-* `1 <= n <= 105`
+* `1 <= n <= 1e5`
 * The values in derived are either `0`'s or `1`'s
 

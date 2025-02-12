@@ -32,7 +32,7 @@ Finally, shift the characters from index 1 to index 1 forward. Now s = "catz".
 
 **Constraints:**
 
-* `1 <= s.length, shifts.length <= 5 * 104`
+* `1 <= s.length, shifts.length <= 5 * 1e4`
 * `shifts[i].length == 3`
 * `0 <= starti <= endi < s.length`
 * `0 <= directioni <= 1`

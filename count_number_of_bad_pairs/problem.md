@@ -28,6 +28,6 @@ Explanation: There are no bad pairs.
 
 **Constraints:**
 
-`1 <= nums.length <= pow(10,5)`
-`1 <= nums[i] <= pow(10,9)`
+`1 <= nums.length <= 1e5`
+`1 <= nums[i] <= 1e9`
 

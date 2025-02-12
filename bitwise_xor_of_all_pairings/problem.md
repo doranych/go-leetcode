@@ -31,5 +31,5 @@ Thus, one possible nums3 array is [2,5,1,6].
 
 **Constraints**:
 
-* `1 <= nums1.length, nums2.length <= 105`
-* `0 <= nums1[i], nums2[j] <= 109`
+* `1 <= nums1.length, nums2.length <= 1e5`
+* `0 <= nums1[i], nums2[j] <= 1e9`

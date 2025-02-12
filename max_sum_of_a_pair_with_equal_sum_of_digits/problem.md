@@ -27,6 +27,6 @@ Explanation: There are no two numbers that satisfy the conditions, so we return 
 
 **Constraints:**
 
-* `1 <= nums.length <= pow(10,5)`
-* `1 <= nums[i] <= pow(10,9)`
+* `1 <= nums.length <= 1e5`
+* `1 <= nums[i] <= 1e9`
 

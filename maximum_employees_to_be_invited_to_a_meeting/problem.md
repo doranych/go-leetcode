@@ -54,7 +54,7 @@ The maximum number of employees that can be invited to the meeting is 4.
 **Constraints:**
 
 * `n == favorite.length`
-* `2 <= n <= 105`
+* `2 <= n <= 1e5`
 * `0 <= favorite[i] <= n - 1`
 * `favorite[i] != i`
 

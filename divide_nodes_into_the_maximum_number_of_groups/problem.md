@@ -44,7 +44,7 @@ It can be shown that no grouping is possible.
 **Constraints:**
 
 * `1 <= n <= 500`
-* `1 <= edges.length <= 104`
+* `1 <= edges.length <= 1e4`
 * `edges[i].length == 2`
 * `1 <= ai, bi <= n`
 * `ai != bi`

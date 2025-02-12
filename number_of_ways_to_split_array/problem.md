@@ -42,6 +42,6 @@ There are two valid splits in nums:
 
 **Constraints**:
 
-* `2 <= nums.length <= 105`
-* `-105 <= nums[i] <= 105`
+* `2 <= nums.length <= 1e5`
+* `-1e5 <= nums[i] <= 1e5`
 
