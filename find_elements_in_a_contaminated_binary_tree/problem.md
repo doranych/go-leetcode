@@ -16,6 +16,8 @@ Implement the `FindElements` class:
 
 **Example 1:**
 
+![img.png](../bin/find_elements_in_a_contaminated_binary_tree/img.png)
+
 ```text
 Input
 ["FindElements","find","find"]
@@ -29,6 +31,8 @@ findElements.find(2); // return True
 ```
 
 **Example 2:**
+
+![img_1.png](../bin/find_elements_in_a_contaminated_binary_tree/img_1.png)
 
 ```text
 Input
@@ -44,6 +48,8 @@ findElements.find(5); // return False
 ```
 
 **Example 3:**
+
+![img_2.png](../bin/find_elements_in_a_contaminated_binary_tree/img_2.png)
 
 ```text
 Input
