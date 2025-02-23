@@ -1,13 +1,9 @@
 package recover_a_tree_from_preorder_traversal
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/doranych/go-leetcode/pkg/utils"
 
-func recoverFromPreorder(traversal string) *TreeNode {
-	stack := make([]*TreeNode, 0)
+func recoverFromPreorder(traversal string) *utils.TreeNode {
+	stack := make([]*utils.TreeNode, 0)
 	depth := 0
 	curVal := 0
 	for i, r := range traversal {
@@ -16,7 +12,7 @@ func recoverFromPreorder(traversal string) *TreeNode {
 		}
 		if r == '-' || i == len(traversal)-1 {
 			if curVal != 0 {
-				node := &TreeNode{Val: curVal}
+				node := &utils.TreeNode{Val: curVal}
 				curVal = 0
 				if len(stack) > depth {
 					stack = stack[:depth]

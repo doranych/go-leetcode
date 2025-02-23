@@ -1,22 +1,18 @@
 package find_elements_in_a_contaminated_binary_tree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/doranych/go-leetcode/pkg/utils"
 
 type FindElements struct {
-	t *TreeNode
+	t *utils.TreeNode
 	m map[int]bool
 }
 
 type qe struct {
-	t *TreeNode
+	t *utils.TreeNode
 	v int
 }
 
-func Constructor(root *TreeNode) FindElements {
+func Constructor(root *utils.TreeNode) FindElements {
 	q := []qe{{root, 0}}
 	m := make(map[int]bool)
 	for len(q) > 0 {

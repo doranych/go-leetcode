@@ -4,6 +4,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
+	"github.com/doranych/go-leetcode/pkg/utils"
 )
 
 func Test_recoverFromPreorder(t *testing.T) {
@@ -19,36 +21,7 @@ func Test_recoverFromPreorder(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := recoverFromPreorder(tt.traversal)
-			assert.Equal(t, tt.want, dumpTree(got))
+			assert.Equal(t, tt.want, utils.DumpTree(got))
 		})
 	}
-}
-
-// dumpTree is a function that outputs array of TreeNode values in level order
-func dumpTree(node *TreeNode) []int {
-	if node == nil {
-		return []int{}
-	}
-
-	var result []int
-	queue := []*TreeNode{node}
-
-	for len(queue) > 0 {
-		current := queue[0]
-		queue = queue[1:]
-
-		if current != nil {
-			result = append(result, current.Val)
-			queue = append(queue, current.Left, current.Right)
-		} else {
-			result = append(result, 0)
-		}
-	}
-
-	// Remove trailing zeros
-	for len(result) > 0 && result[len(result)-1] == 0 {
-		result = result[:len(result)-1]
-	}
-
-	return result
 }
