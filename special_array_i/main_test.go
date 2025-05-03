@@ -1,6 +1,10 @@
 package special_array_i
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_isArraySpecial(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_isArraySpecial(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := isArraySpecial(tt.nums); got != tt.want {
-				t.Errorf("isArraySpecial() = %v, want %v", got, tt.want)
-			}
+			got := isArraySpecial(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

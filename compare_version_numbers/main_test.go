@@ -1,6 +1,10 @@
 package compare_version_numbers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_compareVersion(t *testing.T) {
 	tests := []struct {
@@ -21,9 +25,8 @@ func Test_compareVersion(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := compareVersion(tt.version1, tt.version2); got != tt.want {
-				t.Errorf("compareVersion() = %v, want %v", got, tt.want)
-			}
+			got := compareVersion(tt.version1, tt.version2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

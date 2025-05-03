@@ -1,8 +1,9 @@
 package course_schedule_iv
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_checkIfPrerequisite(t *testing.T) {
@@ -22,9 +23,8 @@ func Test_checkIfPrerequisite(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := checkIfPrerequisite(tt.args.n, tt.args.req, tt.args.q); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("checkIfPrerequisite() = %v, want %v", got, tt.want)
-			}
+			got := checkIfPrerequisite(tt.args.n, tt.args.req, tt.args.q)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

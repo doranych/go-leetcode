@@ -1,6 +1,10 @@
 package maximum_candies_allocated_to_k_children
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maximumCandies(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_maximumCandies(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maximumCandies(tt.candies, tt.k); got != tt.want {
-				t.Errorf("maximumCandies() = %v, want %v", got, tt.want)
-			}
+			got := maximumCandies(tt.candies, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

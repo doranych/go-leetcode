@@ -1,8 +1,9 @@
 package word_subsets
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_wordSubsets(t *testing.T) {
@@ -20,9 +21,8 @@ func Test_wordSubsets(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := wordSubsets(tt.args.words1, tt.args.words2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("wordSubsets() = %v, want %v", got, tt.want)
-			}
+			got := wordSubsets(tt.args.words1, tt.args.words2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package first_completely_painted_row_or_column
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_firstCompleteIndex(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_firstCompleteIndex(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := firstCompleteIndex(tt.args.arr, tt.args.mat); got != tt.want {
-				t.Errorf("firstCompleteIndex() = %v, want %v", got, tt.want)
-			}
+			got := firstCompleteIndex(tt.args.arr, tt.args.mat)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package length_of_longest_fibonacci_subsequence
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_lenLongestFibSubseq(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_lenLongestFibSubseq(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := lenLongestFibSubseq(tt.arr); got != tt.want {
-				t.Errorf("lenLongestFibSubseq() = %v, want %v", got, tt.want)
-			}
+			got := lenLongestFibSubseq(tt.arr)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

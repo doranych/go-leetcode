@@ -1,6 +1,10 @@
 package maximum_number_of_fish_in_a_grid
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_findMaxFish(t *testing.T) {
 	type args struct {
@@ -19,9 +23,8 @@ func Test_findMaxFish(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findMaxFish(tt.args.grid); got != tt.want {
-				t.Errorf("findMaxFish() = %v, want %v", got, tt.want)
-			}
+			got := findMaxFish(tt.args.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,8 +1,9 @@
 package relative_ranks
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_findRelativeRanks(t *testing.T) {
@@ -17,9 +18,8 @@ func Test_findRelativeRanks(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findRelativeRanks(tt.score); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("findRelativeRanks() = %v, want %v", got, tt.want)
-			}
+			got := findRelativeRanks(tt.score)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

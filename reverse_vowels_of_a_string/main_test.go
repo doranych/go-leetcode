@@ -1,6 +1,10 @@
 package reverse_vowels_of_a_string
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_reverseVowels(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_reverseVowels(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := reverseVowels(tt.s); got != tt.want {
-				t.Errorf("reverseVowels() = %v, want %v", got, tt.want)
-			}
+			got := reverseVowels(tt.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package count_prefix_and_suffix_pairs_i
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countPrefixSuffixPairs(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_countPrefixSuffixPairs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countPrefixSuffixPairs(tt.args.words); got != tt.want {
-				t.Errorf("countPrefixSuffixPairs() = %v, want %v", got, tt.want)
-			}
+			got := countPrefixSuffixPairs(tt.args.words)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

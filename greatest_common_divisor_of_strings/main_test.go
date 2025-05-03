@@ -1,6 +1,10 @@
 package greatest_common_divisor_of_strings
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_gcdOfStrings(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_gcdOfStrings(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := gcdOfStrings(tt.str1, tt.str2); got != tt.want {
-				t.Errorf("gcdOfStrings() = %v, want %v", got, tt.want)
-			}
+			got := gcdOfStrings(tt.str1, tt.str2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

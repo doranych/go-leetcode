@@ -1,6 +1,10 @@
 package letter_tile_possibilities
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_numTilePossibilities(t *testing.T) {
 	type args struct {
@@ -19,9 +23,8 @@ func Test_numTilePossibilities(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := numTilePossibilities(tt.args.tiles); got != tt.want {
-				t.Errorf("numTilePossibilities() = %v, want %v", got, tt.want)
-			}
+			got := numTilePossibilities(tt.args.tiles)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

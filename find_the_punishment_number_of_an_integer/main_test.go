@@ -1,6 +1,10 @@
 package find_the_punishment_number_of_an_integer
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_punishmentNumber(t *testing.T) {
 	type args struct {
@@ -20,9 +24,8 @@ func Test_punishmentNumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := punishmentNumber(tt.args.n); got != tt.want {
-				t.Errorf("punishmentNumber() = %v, want %v", got, tt.want)
-			}
+			got := punishmentNumber(tt.args.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

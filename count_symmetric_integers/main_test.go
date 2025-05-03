@@ -1,6 +1,10 @@
 package count_symmetric_integers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countSymmetricIntegers(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_countSymmetricIntegers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countSymmetricIntegers(tt.low, tt.high); got != tt.want {
-				t.Errorf("countSymmetricIntegers() = %v, want %v", got, tt.want)
-			}
+			got := countSymmetricIntegers(tt.low, tt.high)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

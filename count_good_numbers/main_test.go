@@ -1,6 +1,10 @@
 package count_good_numbers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countGoodNumbers(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_countGoodNumbers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countGoodNumbers(tt.n); got != tt.want {
-				t.Errorf("countGoodNumbers() = %v, want %v", got, tt.want)
-			}
+			got := countGoodNumbers(tt.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

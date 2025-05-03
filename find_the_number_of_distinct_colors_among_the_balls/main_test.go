@@ -1,8 +1,9 @@
 package find_the_number_of_distinct_colors_among_the_balls
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_queryResults(t *testing.T) {
@@ -20,9 +21,8 @@ func Test_queryResults(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := queryResults(tt.args.limit, tt.args.queries); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("queryResults() = %v, want %v", got, tt.want)
-			}
+			got := queryResults(tt.args.limit, tt.args.queries)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

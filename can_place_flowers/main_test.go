@@ -1,6 +1,10 @@
 package can_place_flowers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_canPlaceFlowers(t *testing.T) {
 	tests := []struct {
@@ -18,9 +22,8 @@ func Test_canPlaceFlowers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := canPlaceFlowers(tt.flowerbed, tt.n); got != tt.want {
-				t.Errorf("canPlaceFlowers() = %v, want %v", got, tt.want)
-			}
+			got := canPlaceFlowers(tt.flowerbed, tt.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

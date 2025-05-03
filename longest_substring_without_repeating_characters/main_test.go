@@ -1,6 +1,10 @@
 package longest_substring_without_repeating_characters
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_lengthOfLongestSubstring(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_lengthOfLongestSubstring(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := lengthOfLongestSubstring(tt.s); got != tt.want {
-				t.Errorf("lengthOfLongestSubstring() = %v, want %v", got, tt.want)
-			}
+			got := lengthOfLongestSubstring(tt.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

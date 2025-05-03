@@ -1,6 +1,10 @@
 package merge_strings_alternately
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_mergeAlternately(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_mergeAlternately(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := mergeAlternately(tt.word1, tt.word2); got != tt.want {
-				t.Errorf("mergeAlternately() = %v, want %v", got, tt.want)
-			}
+			got := mergeAlternately(tt.word1, tt.word2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

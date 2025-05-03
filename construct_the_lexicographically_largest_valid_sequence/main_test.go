@@ -1,8 +1,9 @@
 package construct_the_lexicographically_largest_valid_sequence
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_constructDistancedSequence(t *testing.T) {
@@ -25,9 +26,8 @@ func Test_constructDistancedSequence(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := constructDistancedSequence(tt.args.n); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("constructDistancedSequence() = %v, want %v", got, tt.want)
-			}
+			got := constructDistancedSequence(tt.args.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package tuple_with_same_product
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_tupleSameProduct(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_tupleSameProduct(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tupleSameProduct(tt.args.nums); got != tt.want {
-				t.Errorf("tupleSameProduct() = %v, want %v", got, tt.want)
-			}
+			got := tupleSameProduct(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

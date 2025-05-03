@@ -1,6 +1,10 @@
 package count_servers_that_communicate
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countServers(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_countServers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countServers(tt.args.grid); got != tt.want {
-				t.Errorf("countServers() = %v, want %v", got, tt.want)
-			}
+			got := countServers(tt.args.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

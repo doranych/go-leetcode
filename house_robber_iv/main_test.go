@@ -13,7 +13,7 @@ func Test_minCapability(t *testing.T) {
 		k    int
 		want int
 	}{
-		{"", []int{2, 3, 5, 9}, 2, 9},
+		{"", []int{2, 3, 5, 9}, 2, 5},
 		{"", []int{2, 7, 9, 3, 1}, 2, 2},
 	}
 	for _, tt := range tests {

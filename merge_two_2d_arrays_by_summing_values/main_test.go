@@ -1,8 +1,9 @@
 package merge_two_2d_arrays_by_summing_values
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_mergeArrays(t *testing.T) {
@@ -33,9 +34,8 @@ func Test_mergeArrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := mergeArrays(tt.nums1, tt.nums2); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("mergeArrays() = %v, want %v", got, tt.want)
-			}
+			got := mergeArrays(tt.nums1, tt.nums2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

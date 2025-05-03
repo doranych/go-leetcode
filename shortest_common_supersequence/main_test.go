@@ -1,6 +1,10 @@
 package shortest_common_supersequence
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_shortestCommonSupersequence(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_shortestCommonSupersequence(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := shortestCommonSupersequence(tt.str1, tt.str2); got != tt.want {
-				t.Errorf("shortestCommonSupersequence() = %v, want %v", got, tt.want)
-			}
+			got := shortestCommonSupersequence(tt.str1, tt.str2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

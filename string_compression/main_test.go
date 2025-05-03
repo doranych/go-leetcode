@@ -3,6 +3,7 @@ package string_compression
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,10 +22,9 @@ func Test_compress(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := compress(tt.args.chars); got != tt.want {
-				t.Errorf("compress() = %v, want %v", got, tt.want)
-				require.Equal(t, tt.wantSlice, tt.args.chars[:got])
-			}
+			got := compress(tt.args.chars)
+			assert.Equal(t, got, tt.want)
+			require.Equal(t, tt.wantSlice, tt.args.chars[:got])
 		})
 	}
 }

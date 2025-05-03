@@ -1,10 +1,12 @@
 package maximum_number_of_tasks_you_can_assign
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maxTaskAssign(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name     string
 		tasks    []int
@@ -19,9 +21,8 @@ func Test_maxTaskAssign(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxTaskAssign(tt.tasks, tt.workers, tt.pills, tt.strength); got != tt.want {
-				t.Errorf("maxTaskAssign() = %v, want %v", got, tt.want)
-			}
+			got := maxTaskAssign(tt.tasks, tt.workers, tt.pills, tt.strength)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

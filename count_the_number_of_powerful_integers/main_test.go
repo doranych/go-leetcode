@@ -1,10 +1,12 @@
 package count_the_number_of_powerful_integers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_numberOfPowerfulInt(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		st   int64
@@ -22,9 +24,8 @@ func Test_numberOfPowerfulInt(t *testing.T) {
 		{name: "", st: 1, fin: 100, l: 9, s: "101", want: 0}}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := numberOfPowerfulInt(tt.st, tt.fin, tt.l, tt.s); got != tt.want {
-				t.Errorf("numberOfPowerfulInt() = %v, want %v", got, tt.want)
-			}
+			got := numberOfPowerfulInt(tt.st, tt.fin, tt.l, tt.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package put_marbles_in_bags
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_putMarbles(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_putMarbles(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := putMarbles(tt.weights, tt.k); got != tt.want {
-				t.Errorf("putMarbles() = %v, want %v", got, tt.want)
-			}
+			got := putMarbles(tt.weights, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

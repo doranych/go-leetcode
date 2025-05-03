@@ -1,6 +1,10 @@
 package count_equal_and_divisible_pairs_in_an_array
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countPairs(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_countPairs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countPairs(tt.nums, tt.k); got != tt.want {
-				t.Errorf("countPairs() = %v, want %v", got, tt.want)
-			}
+			got := countPairs(tt.nums, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

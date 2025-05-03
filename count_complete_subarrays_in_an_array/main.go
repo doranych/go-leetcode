@@ -21,7 +21,7 @@ func countCompleteSubarrays(nums []int) int {
 			r++
 		}
 		if len(cnt) == len(dNums) {
-			res += (len(nums) - r + 1)
+			res += len(nums) - r + 1
 		}
 	}
 	return res

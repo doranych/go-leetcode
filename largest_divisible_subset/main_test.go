@@ -1,13 +1,12 @@
 package largest_divisible_subset
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_largestDivisibleSubset(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		nums []int
@@ -18,9 +17,8 @@ func Test_largestDivisibleSubset(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := largestDivisibleSubset(tt.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("largestDivisibleSubset() = %v, want %v", got, tt.want)
-			}
+			got := largestDivisibleSubset(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

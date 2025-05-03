@@ -1,6 +1,10 @@
 package maximum_score_after_splitting_a_string
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maxScore(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_maxScore(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxScore(tt.args.s); got != tt.want {
-				t.Errorf("maxScore() = %v, want %v", got, tt.want)
-			}
+			got := maxScore(tt.args.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

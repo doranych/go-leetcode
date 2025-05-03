@@ -1,6 +1,10 @@
 package count_nice_pairs_in_an_array
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countNicePairs(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_countNicePairs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countNicePairs(tt.args.nums); got != tt.want {
-				t.Errorf("countNicePairs() = %v, want %v", got, tt.want)
-			}
+			got := countNicePairs(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

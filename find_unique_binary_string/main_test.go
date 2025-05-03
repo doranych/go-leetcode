@@ -1,6 +1,10 @@
 package find_unique_binary_string
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_findDifferentBinaryString(t *testing.T) {
 	type args struct {
@@ -19,9 +23,8 @@ func Test_findDifferentBinaryString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findDifferentBinaryString(tt.args.nums); got != tt.want {
-				t.Errorf("findDifferentBinaryString() = %v, want %v", got, tt.want)
-			}
+			got := findDifferentBinaryString(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

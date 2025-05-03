@@ -1,8 +1,9 @@
 package map_of_highest_peak
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_highestPeak(t *testing.T) {
@@ -19,9 +20,8 @@ func Test_highestPeak(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := highestPeak(tt.args.isWater); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("highestPeak() = %v, want %v", got, tt.want)
-			}
+			got := highestPeak(tt.args.isWater)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

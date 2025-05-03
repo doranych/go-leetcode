@@ -32,8 +32,8 @@ func maximumInvitations(favorite []int) int {
 				l := cycle - cMap[next]
 				maxCycle = max(l, maxCycle)
 				if l == 2 {
-					visNodes1 := map[int]struct{}{cur: struct{}{}, next: struct{}{}}
-					visNodes2 := map[int]struct{}{cur: struct{}{}, next: struct{}{}}
+					visNodes1 := map[int]struct{}{cur: {}, next: {}}
+					visNodes2 := map[int]struct{}{cur: {}, next: {}}
 					pairs += 2 + bfs(cur, visNodes1, graph) + bfs(next, visNodes2, graph)
 				}
 				break

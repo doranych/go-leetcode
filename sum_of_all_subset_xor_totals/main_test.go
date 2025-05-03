@@ -1,10 +1,12 @@
 package sum_of_all_subset_xor_totals
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_subsetXORSum(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		nums []int
@@ -16,9 +18,8 @@ func Test_subsetXORSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := subsetXORSum(tt.nums); got != tt.want {
-				t.Errorf("subsetXORSum() = %v, want %v", got, tt.want)
-			}
+			got := subsetXORSum(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

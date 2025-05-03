@@ -1,6 +1,10 @@
 package reverse_words_in_a_string
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_reverseWords(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_reverseWords(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := reverseWords(tt.s); got != tt.want {
-				t.Errorf("reverseWords() = %v, want %v", got, tt.want)
-			}
+			got := reverseWords(tt.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

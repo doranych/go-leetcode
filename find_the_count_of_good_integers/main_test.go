@@ -1,6 +1,10 @@
 package find_the_count_of_good_integers
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countGoodIntegers(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_countGoodIntegers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countGoodIntegers(tt.n, tt.k); got != tt.want {
-				t.Errorf("countGoodIntegers() = %v, want %v", got, tt.want)
-			}
+			got := countGoodIntegers(tt.n, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,10 +1,12 @@
 package count_of_interesting_subarrays
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countInterestingSubarrays(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		nums []int
@@ -20,9 +22,8 @@ func Test_countInterestingSubarrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countInterestingSubarrays(tt.nums, tt.mod, tt.k); got != tt.want {
-				t.Errorf("countInterestingSubarrays() = %v, want %v", got, tt.want)
-			}
+			got := countInterestingSubarrays(tt.nums, tt.mod, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

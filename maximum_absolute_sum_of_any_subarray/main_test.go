@@ -1,6 +1,10 @@
 package maximum_absolute_sum_of_any_subarray
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maxAbsoluteSum(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_maxAbsoluteSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxAbsoluteSum(tt.nums); got != tt.want {
-				t.Errorf("maxAbsoluteSum() = %v, want %v", got, tt.want)
-			}
+			got := maxAbsoluteSum(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

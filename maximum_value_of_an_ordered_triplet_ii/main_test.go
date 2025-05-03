@@ -1,10 +1,12 @@
 package maximum_value_of_an_ordered_triplet_ii
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maximumTripletValue(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		nums []int
@@ -16,9 +18,8 @@ func Test_maximumTripletValue(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maximumTripletValue(tt.nums); got != tt.want {
-				t.Errorf("maximumTripletValue() = %v, want %v", got, tt.want)
-			}
+			got := maximumTripletValue(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

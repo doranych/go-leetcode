@@ -1,8 +1,9 @@
 package find_eventual_safe_states
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_eventualSafeNodes(t *testing.T) {
@@ -19,9 +20,8 @@ func Test_eventualSafeNodes(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := eventualSafeNodes(tt.args.graph); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("eventualSafeNodes() = %v, want %v", got, tt.want)
-			}
+			got := eventualSafeNodes(tt.args.graph)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

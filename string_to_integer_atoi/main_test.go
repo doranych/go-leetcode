@@ -1,6 +1,10 @@
 package string_to_integer_atoi
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_myAtoi(t *testing.T) {
 	type args struct {
@@ -24,9 +28,8 @@ func Test_myAtoi(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := myAtoi(tt.args.s); got != tt.want {
-				t.Errorf("myAtoi() = %v, want %v", got, tt.want)
-			}
+			got := myAtoi(tt.args.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package count_the_hidden_sequences
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_numberOfArrays(t *testing.T) {
 	tests := []struct {
@@ -16,9 +20,8 @@ func Test_numberOfArrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := numberOfArrays(tt.differences, tt.lower, tt.upper); got != tt.want {
-				t.Errorf("numberOfArrays() = %v, want %v", got, tt.want)
-			}
+			got := numberOfArrays(tt.differences, tt.lower, tt.upper)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

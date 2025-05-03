@@ -1,8 +1,9 @@
 package find_the_prefix_common_array_of_two_arrays
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_findThePrefixCommonArray(t *testing.T) {
@@ -20,9 +21,8 @@ func Test_findThePrefixCommonArray(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findThePrefixCommonArray(tt.args.A, tt.args.B); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("findThePrefixCommonArray() = %v, want %v", got, tt.want)
-			}
+			got := findThePrefixCommonArray(tt.args.A, tt.args.B)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

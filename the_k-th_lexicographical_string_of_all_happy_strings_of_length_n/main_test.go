@@ -2,6 +2,8 @@ package the_k_th_lexicographical_string_of_all_happy_strings_of_length_n
 
 import (
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_getHappyString(t *testing.T) {
@@ -21,9 +23,8 @@ func Test_getHappyString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := getHappyString(tt.args.n, tt.args.k); got != tt.want {
-				t.Errorf("getHappyString() = %v, want %v", got, tt.want)
-			}
+			got := getHappyString(tt.args.n, tt.args.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

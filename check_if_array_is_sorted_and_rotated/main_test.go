@@ -3,6 +3,8 @@ package check_if_array_is_sorted_and_rotated
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_check(t *testing.T) {
@@ -21,9 +23,8 @@ func Test_check(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := check(tt.args.nums); got != tt.want {
-				t.Errorf("check() = %v, want %v", got, tt.want)
-			}
+			got := check(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

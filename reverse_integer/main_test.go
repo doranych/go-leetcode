@@ -1,11 +1,12 @@
 package reverse_integer
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_reverse(t *testing.T) {
-	type args struct {
-		x int
-	}
 	tests := []struct {
 		name string
 		x    int
@@ -18,9 +19,8 @@ func Test_reverse(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := reverse(tt.x); got != tt.want {
-				t.Errorf("reverse() = %v, want %v", got, tt.want)
-			}
+			got := reverse(tt.x)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

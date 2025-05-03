@@ -1,6 +1,10 @@
 package count_the_number_of_ideal_arrays
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_idealArrays(t *testing.T) {
 	tests := []struct {
@@ -17,9 +21,8 @@ func Test_idealArrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := idealArrays(tt.n, tt.maxValue); got != tt.want {
-				t.Errorf("idealArrays() = %v, want %v", got, tt.want)
-			}
+			got := idealArrays(tt.n, tt.maxValue)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

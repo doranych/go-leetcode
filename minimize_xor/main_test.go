@@ -1,6 +1,10 @@
 package minimize_xor
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_minimizeXor(t *testing.T) {
 	type args struct {
@@ -19,9 +23,8 @@ func Test_minimizeXor(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minimizeXor(tt.args.num1, tt.args.num2); got != tt.want {
-				t.Errorf("minimizeXor() = %v, want %v", got, tt.want)
-			}
+			got := minimizeXor(tt.args.num1, tt.args.num2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

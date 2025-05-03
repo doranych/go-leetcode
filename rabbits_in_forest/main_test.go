@@ -1,6 +1,10 @@
 package rabbits_in_forest
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_numRabbits(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_numRabbits(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := numRabbits(tt.answers); got != tt.want {
-				t.Errorf("numRabbits() = %v, want %v", got, tt.want)
-			}
+			got := numRabbits(tt.answers)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

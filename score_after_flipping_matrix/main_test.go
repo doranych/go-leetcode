@@ -1,6 +1,10 @@
 package score_after_flipping_matrix
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_matrixScore(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_matrixScore(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := matrixScore(tt.grid); got != tt.want {
-				t.Errorf("matrixScore() = %v, want %v", got, tt.want)
-			}
+			got := matrixScore(tt.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

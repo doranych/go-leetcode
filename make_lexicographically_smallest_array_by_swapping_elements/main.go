@@ -8,7 +8,7 @@ import (
 func lexicographicallySmallestArray(nums []int, limit int) []int {
 	c := slices.Clone(nums)
 	sort.Ints(c)
-	groupToNums := [][]int{[]int{}}
+	groupToNums := [][]int{{}}
 	numToGroup := map[int]int{}
 	group := 0
 	groupToNums[group] = []int{c[0]}

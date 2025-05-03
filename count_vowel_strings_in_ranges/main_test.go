@@ -1,8 +1,9 @@
 package count_vowel_strings_in_ranges
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_vowelStrings(t *testing.T) {
@@ -22,9 +23,8 @@ func Test_vowelStrings(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := vowelStrings(tt.args.words, tt.args.queries); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("vowelStrings() = %v, want %v", got, tt.want)
-			}
+			got := vowelStrings(tt.args.words, tt.args.queries)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

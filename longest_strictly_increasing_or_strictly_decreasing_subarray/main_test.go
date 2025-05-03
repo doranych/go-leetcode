@@ -1,6 +1,10 @@
 package longest_strictly_increasing_or_strictly_decreasing_subarray
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_longestMonotonicSubarray(t *testing.T) {
 	type args struct {
@@ -18,9 +22,8 @@ func Test_longestMonotonicSubarray(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := longestMonotonicSubarray(tt.args.nums); got != tt.want {
-				t.Errorf("longestMonotonicSubarray() = %v, want %v", got, tt.want)
-			}
+			got := longestMonotonicSubarray(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

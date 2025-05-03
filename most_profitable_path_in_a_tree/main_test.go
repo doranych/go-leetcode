@@ -1,6 +1,10 @@
 package most_profitable_path_in_a_tree
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_mostProfitablePath(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_mostProfitablePath(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := mostProfitablePath(tt.edges, tt.bob, tt.amount); got != tt.want {
-				t.Errorf("mostProfitablePath() = %v, want %v", got, tt.want)
-			}
+			got := mostProfitablePath(tt.edges, tt.bob, tt.amount)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

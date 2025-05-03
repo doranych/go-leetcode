@@ -1,6 +1,10 @@
 package construct_smallest_number_from_di_string
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_smallestNumber(t *testing.T) {
 	type args struct {
@@ -19,9 +23,8 @@ func Test_smallestNumber(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := smallestNumber(tt.args.pattern); got != tt.want {
-				t.Errorf("smallestNumber() = %v, want %v", got, tt.want)
-			}
+			got := smallestNumber(tt.args.pattern)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

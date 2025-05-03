@@ -3,7 +3,7 @@ package find_eventual_safe_states
 func eventualSafeNodes(graph [][]int) []int {
 	safeNodes := make([]int, 0)
 	visited := make([]uint8, len(graph))
-	for i, _ := range graph {
+	for i := range graph {
 		if isSafe(graph, visited, i) {
 			safeNodes = append(safeNodes, i)
 		}

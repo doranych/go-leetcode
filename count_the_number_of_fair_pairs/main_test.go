@@ -1,6 +1,10 @@
 package count_the_number_of_fair_pairs
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countFairPairs(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_countFairPairs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countFairPairs(tt.nums, tt.lower, tt.upper); got != tt.want {
-				t.Errorf("countFairPairs() = %v, want %v", got, tt.want)
-			}
+			got := countFairPairs(tt.nums, tt.lower, tt.upper)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

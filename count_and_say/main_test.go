@@ -1,6 +1,10 @@
 package count_and_say
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countAndSay(t *testing.T) {
 	tests := []struct {
@@ -21,9 +25,8 @@ func Test_countAndSay(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countAndSay(tt.n); got != tt.want {
-				t.Errorf("countAndSay() = %v, want %v", got, tt.want)
-			}
+			got := countAndSay(tt.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package partition_equal_subset_sum
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_canPartition(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_canPartition(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := canPartition(tt.nums); got != tt.want {
-				t.Errorf("canPartition() = %v, want %v", got, tt.want)
-			}
+			got := canPartition(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

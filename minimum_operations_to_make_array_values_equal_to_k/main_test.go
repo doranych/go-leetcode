@@ -1,6 +1,10 @@
 package minimum_operations_to_make_array_values_equal_to_k
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_minOperations(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_minOperations(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minOperations(tt.nums, tt.k); got != tt.want {
-				t.Errorf("minOperations() = %v, want %v", got, tt.want)
-			}
+			got := minOperations(tt.nums, tt.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

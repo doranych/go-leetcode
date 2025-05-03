@@ -1,6 +1,10 @@
 package bitwise_xor_of_all_pairings
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_xorAllNums(t *testing.T) {
 	type args struct {
@@ -21,9 +25,8 @@ func Test_xorAllNums(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := xorAllNums(tt.args.nums1, tt.args.nums2); got != tt.want {
-				t.Errorf("xorAllNums() = %v, want %v", got, tt.want)
-			}
+			got := xorAllNums(tt.args.nums1, tt.args.nums2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

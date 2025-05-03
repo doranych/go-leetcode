@@ -1,6 +1,10 @@
 package container_with_most_water
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maxArea(t *testing.T) {
 	type args struct {
@@ -16,9 +20,8 @@ func Test_maxArea(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxArea(tt.args.height); got != tt.want {
-				t.Errorf("maxArea() = %v, want %v", got, tt.want)
-			}
+			got := maxArea(tt.args.height)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package unique_length_3_palindromic_subsequences
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countPalindromicSubsequence(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_countPalindromicSubsequence(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countPalindromicSubsequence(tt.args.s); got != tt.want {
-				t.Errorf("countPalindromicSubsequence() = %v, want %v", got, tt.want)
-			}
+			got := countPalindromicSubsequence(tt.args.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

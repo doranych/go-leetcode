@@ -1,6 +1,10 @@
 package check_if_number_is_a_sum_of_powers_of_three
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_checkPowersOfThree(t *testing.T) {
 	tests := []struct {
@@ -16,9 +20,8 @@ func Test_checkPowersOfThree(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := checkPowersOfThree(tt.n); got != tt.want {
-				t.Errorf("checkPowersOfThree() = %v, want %v", got, tt.want)
-			}
+			got := checkPowersOfThree(tt.n)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

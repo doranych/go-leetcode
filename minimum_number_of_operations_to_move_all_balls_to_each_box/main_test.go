@@ -1,8 +1,9 @@
 package minimum_number_of_operations_to_move_all_balls_to_each_box
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_minOperations(t *testing.T) {
@@ -19,9 +20,8 @@ func Test_minOperations(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minOperations(tt.args.boxes); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("minOperations() = %v, want %v", got, tt.want)
-			}
+			got := minOperations(tt.args.boxes)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

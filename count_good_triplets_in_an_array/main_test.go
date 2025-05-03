@@ -1,6 +1,10 @@
 package count_good_triplets_in_an_array
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_goodTriplets(t *testing.T) {
 	tests := []struct {
@@ -17,9 +21,8 @@ func Test_goodTriplets(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := goodTriplets(tt.nums1, tt.nums2); got != tt.want {
-				t.Errorf("goodTriplets() = %v, want %v", got, tt.want)
-			}
+			got := goodTriplets(tt.nums1, tt.nums2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

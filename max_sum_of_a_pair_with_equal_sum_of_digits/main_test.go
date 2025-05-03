@@ -1,6 +1,10 @@
 package max_sum_of_a_pair_with_equal_sum_of_digits
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maximumSum(t *testing.T) {
 	type args struct {
@@ -16,9 +20,8 @@ func Test_maximumSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maximumSum(tt.args.nums); got != tt.want {
-				t.Errorf("maximumSum() = %v, want %v", got, tt.want)
-			}
+			got := maximumSum(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

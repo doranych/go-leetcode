@@ -1,6 +1,10 @@
 package minimum_operations_to_exceed_threshold_value_ii
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_minOperations(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_minOperations(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minOperations(tt.args.nums, tt.args.k); got != tt.want {
-				t.Errorf("minOperations() = %v, want %v", got, tt.want)
-			}
+			got := minOperations(tt.args.nums, tt.args.k)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

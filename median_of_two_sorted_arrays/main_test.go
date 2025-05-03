@@ -1,6 +1,10 @@
 package median_of_two_sorted_arrays
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_findMedianSortedArrays(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_findMedianSortedArrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findMedianSortedArrays(tt.nums1, tt.nums2); got != tt.want {
-				t.Errorf("findMedianSortedArrays() = %v, want %v", got, tt.want)
-			}
+			got := findMedianSortedArrays(tt.nums1, tt.nums2)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

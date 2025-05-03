@@ -1,6 +1,10 @@
 package number_of_sub_arrays_with_odd_sum
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_numOfSubarrays(t *testing.T) {
 	tests := []struct {
@@ -14,9 +18,8 @@ func Test_numOfSubarrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := numOfSubarrays(tt.arr); got != tt.want {
-				t.Errorf("numOfSubarrays() = %v, want %v", got, tt.want)
-			}
+			got := numOfSubarrays(tt.arr)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

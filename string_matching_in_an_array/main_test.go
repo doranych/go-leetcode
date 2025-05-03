@@ -1,8 +1,9 @@
 package string_matching_in_an_array
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_stringMatching(t *testing.T) {
@@ -20,9 +21,8 @@ func Test_stringMatching(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := stringMatching(tt.args.words); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("stringMatching() = %v, want %v", got, tt.want)
-			}
+			got := stringMatching(tt.args.words)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

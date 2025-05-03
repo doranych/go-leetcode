@@ -1,6 +1,10 @@
 package count_subarrays_with_fixed_bounds
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countSubarrays(t *testing.T) {
 	tests := []struct {
@@ -15,9 +19,8 @@ func Test_countSubarrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countSubarrays(tt.nums, tt.minK, tt.maxK); got != tt.want {
-				t.Errorf("countSubarrays() = %v, want %v", got, tt.want)
-			}
+			got := countSubarrays(tt.nums, tt.minK, tt.maxK)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

@@ -1,6 +1,10 @@
 package divide_nodes_into_the_maximum_number_of_groups
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_magnificentSets(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_magnificentSets(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := magnificentSets(tt.args.n, tt.args.edges); got != tt.want {
-				t.Errorf("magnificentSets() = %v, want %v", got, tt.want)
-			}
+			got := magnificentSets(tt.args.n, tt.args.edges)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

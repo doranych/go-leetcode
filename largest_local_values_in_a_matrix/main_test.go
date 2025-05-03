@@ -1,13 +1,12 @@
 package largest_local_values_in_a_matrix
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_largestLocal(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		grid [][]int
@@ -20,9 +19,8 @@ func Test_largestLocal(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := largestLocal(tt.grid); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("largestLocal() = %v, want %v", got, tt.want)
-			}
+			got := largestLocal(tt.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

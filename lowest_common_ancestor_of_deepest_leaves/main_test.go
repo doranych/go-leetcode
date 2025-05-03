@@ -1,15 +1,14 @@
 package lowest_common_ancestor_of_deepest_leaves
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 
 	"github.com/doranych/go-leetcode/pkg/utils"
 )
 
 func Test_lcaDeepestLeaves(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		root *utils.TreeNode
@@ -34,9 +33,8 @@ func Test_lcaDeepestLeaves(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := lcaDeepestLeaves(tt.root); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("lcaDeepestLeaves() = %v, want %v", got, tt.want)
-			}
+			got := lcaDeepestLeaves(tt.root)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

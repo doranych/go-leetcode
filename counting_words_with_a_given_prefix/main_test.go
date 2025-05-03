@@ -1,6 +1,10 @@
 package counting_words_with_a_given_prefix
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_prefixCount(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_prefixCount(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := prefixCount(tt.args.words, tt.args.pref); got != tt.want {
-				t.Errorf("prefixCount() = %v, want %v", got, tt.want)
-			}
+			got := prefixCount(tt.args.words, tt.args.pref)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

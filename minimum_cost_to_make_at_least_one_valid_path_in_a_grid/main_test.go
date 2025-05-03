@@ -1,6 +1,10 @@
 package minimum_cost_to_make_at_least_one_valid_path_in_a_grid
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_minCost(t *testing.T) {
 	type args struct {
@@ -18,9 +22,8 @@ func Test_minCost(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minCost(tt.args.grid); got != tt.want {
-				t.Errorf("minCost() = %v, want %v", got, tt.want)
-			}
+			got := minCost(tt.args.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

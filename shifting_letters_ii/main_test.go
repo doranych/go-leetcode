@@ -1,6 +1,10 @@
 package shifting_letters_ii
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_shiftingLetters(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_shiftingLetters(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := shiftingLetters(tt.args.s, tt.args.shifts); got != tt.want {
-				t.Errorf("shiftingLetters() = %v, want %v", got, tt.want)
-			}
+			got := shiftingLetters(tt.args.s, tt.args.shifts)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

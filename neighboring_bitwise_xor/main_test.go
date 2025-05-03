@@ -1,6 +1,10 @@
 package neighboring_bitwise_xor
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_doesValidArrayExist(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_doesValidArrayExist(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := doesValidArrayExist(tt.args.derived); got != tt.want {
-				t.Errorf("doesValidArrayExist() = %v, want %v", got, tt.want)
-			}
+			got := doesValidArrayExist(tt.args.derived)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

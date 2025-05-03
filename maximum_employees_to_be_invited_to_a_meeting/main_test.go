@@ -1,6 +1,10 @@
 package maximum_employees_to_be_invited_to_a_meeting
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maximumInvitations(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_maximumInvitations(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maximumInvitations(tt.args.favorite); got != tt.want {
-				t.Errorf("maximumInvitations() = %v, want %v", got, tt.want)
-			}
+			got := maximumInvitations(tt.args.favorite)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

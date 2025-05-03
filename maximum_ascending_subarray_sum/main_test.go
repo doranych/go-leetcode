@@ -1,6 +1,10 @@
 package maximum_ascending_subarray_sum
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_maxAscendingSum(t *testing.T) {
 	type args struct {
@@ -17,9 +21,8 @@ func Test_maxAscendingSum(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := maxAscendingSum(tt.args.nums); got != tt.want {
-				t.Errorf("maxAscendingSum() = %v, want %v", got, tt.want)
-			}
+			got := maxAscendingSum(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

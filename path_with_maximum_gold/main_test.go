@@ -1,10 +1,12 @@
 package path_with_maximum_gold
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_getMaximumGold(t *testing.T) {
-	type args struct {
-	}
 	tests := []struct {
 		name string
 		grid [][]int
@@ -15,9 +17,8 @@ func Test_getMaximumGold(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := getMaximumGold(tt.grid); got != tt.want {
-				t.Errorf("getMaximumGold() = %v, want %v", got, tt.want)
-			}
+			got := getMaximumGold(tt.grid)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

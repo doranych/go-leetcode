@@ -1,6 +1,10 @@
 package push_dominoes
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_pushDominoes(t *testing.T) {
 	tests := []struct {
@@ -13,9 +17,8 @@ func Test_pushDominoes(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := pushDominoes(tt.dominoes); got != tt.want {
-				t.Errorf("pushDominoes() = %v, want %v", got, tt.want)
-			}
+			got := pushDominoes(tt.dominoes)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

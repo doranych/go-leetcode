@@ -1,6 +1,10 @@
 package count_complete_subarrays_in_an_array
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_countCompleteSubarrays(t *testing.T) {
 	tests := []struct {
@@ -18,9 +22,8 @@ func Test_countCompleteSubarrays(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := countCompleteSubarrays(tt.nums); got != tt.want {
-				t.Errorf("countCompleteSubarrays() = %v, want %v", got, tt.want)
-			}
+			got := countCompleteSubarrays(tt.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

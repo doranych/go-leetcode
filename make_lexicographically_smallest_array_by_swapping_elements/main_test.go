@@ -1,8 +1,9 @@
 package make_lexicographically_smallest_array_by_swapping_elements
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_lexicographicallySmallestArray(t *testing.T) {
@@ -21,9 +22,8 @@ func Test_lexicographicallySmallestArray(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := lexicographicallySmallestArray(tt.args.nums, tt.args.limit); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("lexicographicallySmallestArray() = %v, want %v", got, tt.want)
-			}
+			got := lexicographicallySmallestArray(tt.args.nums, tt.args.limit)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

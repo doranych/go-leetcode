@@ -3,6 +3,8 @@ package evaluate_boolean_binary_tree
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"github.com/doranych/go-leetcode/pkg/utils"
 )
 
@@ -51,9 +53,8 @@ func Test_evaluateTree(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := evaluateTree(tt.root); got != tt.want {
-				t.Errorf("evaluateTree() = %v, want %v", got, tt.want)
-			}
+			got := evaluateTree(tt.root)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

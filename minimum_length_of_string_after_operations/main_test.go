@@ -1,6 +1,10 @@
 package minimum_length_of_string_after_operations
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_minimumLength(t *testing.T) {
 	type args struct {
@@ -16,9 +20,8 @@ func Test_minimumLength(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := minimumLength(tt.args.s); got != tt.want {
-				t.Errorf("minimumLength() = %v, want %v", got, tt.want)
-			}
+			got := minimumLength(tt.args.s)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

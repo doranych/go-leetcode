@@ -1,6 +1,10 @@
 package trapping_rain_water_ii
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_trapRainWater(t *testing.T) {
 	type args struct {
@@ -20,9 +24,8 @@ func Test_trapRainWater(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := trapRainWater(tt.args.heightMap); got != tt.want {
-				t.Errorf("trapRainWater() = %v, want %v", got, tt.want)
-			}
+			got := trapRainWater(tt.args.heightMap)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }

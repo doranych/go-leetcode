@@ -1,8 +1,9 @@
 package find_all_numbers_disappeared_in_an_array
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_findDisappearedNumbers(t *testing.T) {
@@ -21,9 +22,8 @@ func Test_findDisappearedNumbers(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := findDisappearedNumbers(tt.args.nums); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("findDisappearedNumbers() = %v, want %v", got, tt.want)
-			}
+			got := findDisappearedNumbers(tt.args.nums)
+			assert.Equal(t, tt.want, got)
 		})
 	}
 }
