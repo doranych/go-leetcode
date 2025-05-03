@@ -31,6 +31,6 @@ Output: 1
 
 **Constraints:**
 
-* `3 <= s.length <= 5*10e4`
+* `3 <= s.length <= 5*1e4`
 * `s` only consists of `a`, `b` or `c` characters.
 

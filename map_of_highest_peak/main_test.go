@@ -1,4 +1,4 @@
-package map_of_heighest_peak
+package map_of_highest_peak
 
 import (
 	"reflect"
